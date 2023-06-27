@@ -1,11 +1,11 @@
 
-import type { LoaderArgs } from "@remix-run/cloudflare";
+import type { LoaderArgs, V2_MetaFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
 import { marked } from "marked";
 import invariant from "tiny-invariant";
 
-import { getPost } from "src/app/models/post.server";
+import { getPost } from "../models/post.server";
 
 export const loader = async ({params}: LoaderArgs) => {
   invariant(params.slug, `params.slug is required`);
@@ -16,6 +16,8 @@ export const loader = async ({params}: LoaderArgs) => {
   const html = marked(post.markdown);
   return json({ post, html });
 }
+
+export const meta: V2_MetaFunction = () => [{ title: "Stacktrace Reproduction" }];
 
 export default function PostSlug() {
   const { post, html } = useLoaderData<typeof loader>();
