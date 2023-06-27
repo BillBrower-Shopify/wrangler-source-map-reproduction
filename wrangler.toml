@@ -1,0 +1,11 @@
+# Documentation for this file: https://developers.cloudflare.com/workers/wrangler/configuration
+name = "sourcemaps-reproduction"
+main = "./index.ts"
+compatibility_date = "2023-01-15"
+workers_dev = true
+node_compat = true
+minify = false
+send_metrics = false
+# Auto deployment environments.
+kv_namespaces = []
+routes = []
