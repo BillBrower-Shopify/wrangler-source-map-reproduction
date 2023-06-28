@@ -12,8 +12,6 @@ const remixMiddleware = async (
   const remixHandler: ReturnType<typeof createRequestHandler> =
     createRequestHandler(build as any, 'development');
 
-  console.log("REMIX HANDLER", remixHandler, typeof remixHandler)
-
   const loadContext: AppLoadContext = {
     cf: request.cf,
   };

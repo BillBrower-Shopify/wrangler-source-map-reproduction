@@ -1,5 +1,6 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
+  assetsBuildDirectory: 'public/build',
   cacheDirectory: "./node_modules/.cache/remix",
   future: {
     v2_errorBoundary: true,
@@ -10,6 +11,7 @@ module.exports = {
   },
   ignoredRouteFiles: ["**/.*", "**/*.test.{js,jsx,ts,tsx}"],
   postcss: true,
+  publicPath: "http://127.0.0.1:8083/build",
   serverModuleFormat: "cjs",
   tailwind: true,
 };
